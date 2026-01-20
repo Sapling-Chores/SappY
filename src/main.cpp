@@ -18,23 +18,37 @@ const int temPin = 14;
 
 
 void setup(){
-    Serial.begin(15200);
+    Serial.begin(115200);
     Wire.begin(SDAPin, SCLPin);
-    while (!display.begin(SSD1306_SWITCHCAPVCC, 0X3C)){
+    if (!display.begin(SSD1306_SWITCHCAPVCC, 0X3C)){
         Serial.println("Display not connected");
     }
     Serial.println("Display Connected");
-    while (!accelerometer.begin()){
+    if (!accelerometer.begin()){
         Serial.println("Accelerometer Not connected !");
     }
     Serial.print("Accelerometer Connwected");
-    while (!rtc.begin()){
+    if (!rtc.begin()){
         Serial.print("RTC not connected");
+        Serial.flush();
     }
     Serial.print("RTC connected");
-    
+    rtc.adjust(DateTime(2026, 01, 21, 1, 38, 30));
 
 }
-void loop(){
     
+void loop(){
+    DateTime now = rtc.now();
+    Serial.print("Month: ");
+    Serial.print(now.month());
+    Serial.print("\t");
+    Serial.print("Time: ");
+    Serial.print(now.hour());
+    Serial.print(":");
+    Serial.print(now.minute());
+    Serial.print(":");
+    Serial.print(now.second());
+    Serial.println();
+    delay(1000);
+
 }
