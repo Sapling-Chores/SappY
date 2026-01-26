@@ -12,7 +12,7 @@
 
 ## What is it?
 
-SappY is a desk robot which uses Esp32 and oled to show animations. And reacts using multiple sensors. It also has sounds that makes it more lively.
+SappY is a desk robot which uses Esp32 and oled to show animations(i.e. Facial expression). And reacts using multiple sensors. It also has sounds that makes it more lively.
 
 ## Features: 
 
@@ -31,6 +31,6 @@ I study all day on my pc sitting on my desk, so I wanted something that would pu
 Also since I live in city with AQI level more than 130, I am always concerned about AQI of my room and my surrounding, So I made this project that I would not have to go and check AQI everytime on my phone/pc.
 
 
-Schematic:
+## Schematic:
+<img width="835" height="709" alt="{5A22C7D0-814F-44A7-8909-7BF26803E992}" src="https://github.com/user-attachments/assets/f687ba05-ae1d-42e5-a3e7-af126f39d115" />
 
-<img width="900" height="601" alt="Schematic_Project-SappY_2026-01-23" src="https://github.com/user-attachments/assets/f44746ad-6bef-41c7-be96-761264e92961" />
