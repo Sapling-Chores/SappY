@@ -17,7 +17,7 @@ SappY is a desk robot which uses Esp32 and oled to show animations(i.e. Facial e
 ## Features: 
 
 * It uses esp32-S3 to control sensors and oleds.
-* It uses MPU 6050 to detect shakkes and motions and react accordingly usig Oled and Sound.
+* It uses MPU 6050 to detect shakkes and motions and react accordingly usig Oled and Sound ( sound- not added yet) .
 * It has a BME 680 to measure air quality of the room the robot is in.
 * It uses 3.7 V LiPo battery with a charging module Adafruit Power Boost 1000c
   
