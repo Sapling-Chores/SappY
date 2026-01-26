@@ -49,6 +49,8 @@ Also since I live in city with AQI level more than 130, I am always concerned ab
 4. https://www.amazon.in/Robocraze-MPU-6050-Gyroscope-Accelerometer-Arduino/dp/B07H3XH1TB/ref=sr_1_1?dib=eyJ2IjoiMSJ9.5iuyhdJ2V22JDaYKg2aEgRrWx0qj4SYyh4cCZxOZFrtB4-ld4eMzk6PC7WNAme3Cs4vWJmE-MDAQQZOSwk3CLTK_OPezZOGLi5jnwERryblX_azJwC2ZNhYJca3_gzVlkwOZ8p6bF2gBbvqw9G7Mhcb1C60c0xjA5Q2EetG73C6abXEd0uUJb-Aptef3vF8sJH-AczducFovkXAFpioYa72SN871DwYMdps8n6HhzoQ4UlaUNhA8UDuTvCMbM7cMh7FDSs2pEV-YiNYnH66xdokdOiDP2LpoNmqi0ZhX2Fk.v3YriilME6-nZz-P1dmDCpchQsUe1IDUGNhLfGp4cqQ&dib_tag=se&keywords=mpu6050&qid=1769469429&sr=8-1
 5. https://robu.in/product/bme680-digital-temperature-humidity-pressure-sensor-cjmcu-680-high-altitude-sensor-module-development-board/
 6. https://www.digikey.in/en/products/detail/same-sky-formerly-cui-devices-/SLW-883935-2A-D/21259966?gclsrc=aw.ds&gad_source=1&gad_campaignid=23301206764&gbraid=0AAAAADrbLlgNQpF9PA5IO9LraIBOVLQUy&gclid=Cj0KCQiAvtzLBhCPARIsALwhxdqmE0ukPPqwWIWmDeIgc0GmUqvppiBpVVl7xABMWCDhwBUVgKycA1YaAp3gEALw_wcB
+7. https://robu.in/product/wly803040-1000mah-3-7v-single-cell-rechargeable-lipo-battery/
+
 # Bom
 
 <img width="1919" height="870" alt="{99DD8B30-EA63-4ADF-910A-D8F5C2E419FF}" src="https://github.com/user-attachments/assets/c6f925c2-0f30-4e3e-bcf9-f9053021ec80" />
@@ -59,6 +61,7 @@ Also since I live in city with AQI level more than 130, I am always concerned ab
 <img width="1716" height="700" alt="{6FD3F44B-A4BA-45F2-BBF2-F8CDAFB6D78B}" src="https://github.com/user-attachments/assets/ee093ab2-4520-40ae-a6f3-b680463dc124" />
 <img width="1902" height="796" alt="{CF2FEEF3-E7B0-4E17-973C-231A355BFCA4}" src="https://github.com/user-attachments/assets/acfafdfd-0d39-44b9-ba0d-799daa56179b" />
 <img width="1902" height="721" alt="{D78C6B45-F904-4817-9036-1DE75751EE18}" src="https://github.com/user-attachments/assets/f9ed6239-2c2e-4fee-a607-40955ce0b8f5" />
+<img width="1900" height="805" alt="{7732F5F5-A3F0-4F25-85FD-BAC5CD64A5F6}" src="https://github.com/user-attachments/assets/ad002024-b6fb-4835-a5c8-6f6e162ecdde" />
 
 
 
