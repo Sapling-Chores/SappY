@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmotionBot Controller - AQI & Expressions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --pastel-purple: #b19cd9;
+            --pastel-purple-light: #d8c8f0;
+            --pastel-purple-dark: #8a70c2;
+            --neutral-light: #f5f3f7;
+            --neutral-medium: #e5e1ea;
+            --neutral-dark: #4a4453;
+            --accent-teal: #80deea;
+            --accent-pink: #f8bbd9;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --success: #a5d6a7;
+            --warning: #ffcc80;
+            --danger: #ef9a9a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Roboto', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--neutral-light) 0%, #ffffff 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(90deg, var(--pastel-purple) 0%, var(--pastel-purple-light) 100%);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(177, 156, 217, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .api-status {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 50px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .api-status.active {
+            color: #e8f5e9;
+        }
+        
+        .api-status i {
+            margin-right: 8px;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 900px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--neutral-medium);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--pastel-purple-dark);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .card-title i {
+            background: linear-gradient(45deg, var(--pastel-purple), var(--pastel-purple-light));
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        /* AQI Section Styles */
+        .city-search {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .city-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid var(--neutral-medium);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .city-input:focus {
+            outline: none;
+            border-color: var(--pastel-purple);
+            box-shadow: 0 0 0 3px rgba(177, 156, 217, 0.2);
+        }
+        
+        .btn {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, var(--pastel-purple), var(--pastel-purple-dark));
+            color: white;
+            box-shadow: 0 5px 15px rgba(177, 156, 217, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(177, 156, 217, 0.5);
+        }
+        
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+        
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+            transform: rotate(30deg);
+            transition: all 0.6s;
+        }
+        
+        .btn-primary:hover::after {
+            left: 100%;
+        }
+        
+        .famous-cities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+        
+        .city-btn {
+            padding: 12px 15px;
+            background: var(--neutral-light);
+            border: 2px solid var(--neutral-medium);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        .city-btn:hover {
+            background: var(--pastel-purple-light);
+            border-color: var(--pastel-purple);
+            color: var(--pastel-purple-dark);
+        }
+        
+        .aqi-display {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .aqi-display.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .aqi-value {
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin: 15px 0;
+            line-height: 1;
+        }
+        
+        .aqi-level {
+            display: inline-block;
+            padding: 8px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .good { background-color: var(--success); color: #1b5e20; }
+        .moderate { background-color: var(--warning); color: #e65100; }
+        .unhealthy { background-color: var(--danger); color: #b71c1c; }
+        
+        .city-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--neutral-medium);
+        }
+        
+        .info-item {
+            text-align: center;
+        }
+        
+        .info-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 5px;
+        }
+        
+        .info-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--pastel-purple-dark);
+        }
+        
+        /* Expressions Section */
+        .expressions-list {
+            margin-bottom: 30px;
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+        
+        .expression-item {
+            background: var(--neutral-light);
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 5px solid var(--pastel-purple);
+            transition: all 0.2s;
+        }
+        
+        .expression-item:hover {
+            background: var(--neutral-medium);
+            transform: translateX(5px);
+        }
+        
+        .expression-info h4 {
+            color: var(--pastel-purple-dark);
+            margin-bottom: 5px;
+        }
+        
+        .expression-info p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .expression-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+        
+        .btn-icon.delete {
+            background: rgba(239, 154, 154, 0.2);
+            color: var(--danger);
+        }
+        
+        .btn-icon.delete:hover {
+            background: var(--danger);
+            color: white;
+        }
+        
+        .btn-icon.edit {
+            background: rgba(255, 204, 128, 0.2);
+            color: var(--warning);
+        }
+        
+        .btn-icon.edit:hover {
+            background: var(--warning);
+            color: white;
+        }
+        
+        .add-expression {
+            background: linear-gradient(135deg, var(--neutral-light) 0%, var(--neutral-medium) 100%);
+            border-radius: 15px;
+            padding: 25px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--pastel-purple-dark);
+            font-weight: 600;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--neutral-medium);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--pastel-purple);
+            box-shadow: 0 0 0 3px rgba(177, 156, 217, 0.2);
+        }
+        
+        textarea.form-input {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .btn-success {
+            background: linear-gradient(45deg, var(--success), #66bb6a);
+            color: white;
+            box-shadow: 0 5px 15px rgba(165, 214, 167, 0.4);
+        }
+        
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(165, 214, 167, 0.5);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--neutral-medium);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--neutral-light);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--pastel-purple);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--pastel-purple-dark);
+        }
+        
+        /* Connection Status */
+        .connection-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: var(--neutral-light);
+        }
+        
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--danger);
+        }
+        
+        .status-indicator.connected {
+            background: var(--success);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(165, 214, 167, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(165, 214, 167, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(165, 214, 167, 0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-robot"></i> EmotionBot Controller</h1>
+            <p class="subtitle">Monitor AQI & Manage Robot Expressions</p>
+            <div class="api-status active">
+                <i class="fas fa-signal"></i> API Connected
+            </div>
+        </header>
+        
+        <div class="main-content">
+            <!-- AQI Monitoring Section -->
+            <section class="card">
+                <h2 class="card-title"><i class="fas fa-cloud-sun"></i> Air Quality Monitor</h2>
+                
+                <div class="city-search">
+                    <input type="text" class="city-input" id="cityInput" placeholder="Enter city name (e.g., London, Tokyo, Delhi)">
+                    <button class="btn btn-primary" id="searchBtn">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+                
+                <div class="famous-cities">
+                    <div class="city-btn" data-city="Delhi">Delhi</div>
+                    <div class="city-btn" data-city="Beijing">Beijing</div>
+                    <div class="city-btn" data-city="New York">New York</div>
+                    <div class="city-btn" data-city="London">London</div>
+                    <div class="city-btn" data-city="Tokyo">Tokyo</div>
+                    <div class="city-btn" data-city="Paris">Paris</div>
+                    <div class="city-btn" data-city="Mumbai">Mumbai</div>
+                    <div class="city-btn" data-city="Los Angeles">Los Angeles</div>
+                </div>
+                
+                <div class="aqi-display" id="aqiDisplay">
+                    <div class="city-name" id="cityName">City Name</div>
+                    <div class="aqi-value" id="aqiValue">--</div>
+                    <div class="aqi-level" id="aqiLevel">Loading...</div>
+                    
+                    <div class="city-info">
+                        <div class="info-item">
+                            <div class="info-label">Updated</div>
+                            <div class="info-value" id="updateTime">--</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Primary Pollutant</div>
+                            <div class="info-value" id="pollutant">--</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Humidity</div>
+                            <div class="info-value" id="humidity">--%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="connection-status">
+                    <div class="status-indicator" id="esp32Status"></div>
+                    <span id="esp32StatusText">ESP32: Disconnected</span>
+                </div>
+            </section>
+            
+            <!-- Expressions Management Section -->
+            <section class="card">
+                <h2 class="card-title"><i class="fas fa-smile-beam"></i> Robot Expressions</h2>
+                
+                <div class="expressions-list" id="expressionsList">
+                    <!-- Expression items will be added here dynamically -->
+                </div>
+                
+                <div class="add-expression">
+                    <h3 style="color: var(--pastel-purple-dark); margin-bottom: 20px;">Add New Expression</h3>
+                    
+                    <div class="form-group">
+                        <label for="expName">Expression Name</label>
+                        <input type="text" class="form-input" id="expName" placeholder="e.g., Happy, Sad, Surprised">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="expCode">Animation Code</label>
+                        <textarea class="form-input" id="expCode" placeholder="// Enter your animation code here
+// Example:
+// display.drawCircle(32, 16, 10);
+// display.drawLine(20, 30, 44, 30);
+// display.fillRect(24, 28, 16, 4);"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="soundEffect">Sound Effect (Optional)</label>
+                        <input type="text" class="form-input" id="soundEffect" placeholder="e.g., 'happy_beep', 'sad_tone' or leave blank">
+                    </div>
+                    
+                    <button class="btn btn-success" id="addExpressionBtn">
+                        <i class="fas fa-plus-circle"></i> Add Expression to Robot
+                    </button>
+                </div>
+            </section>
+        </div>
+        
+        <div class="footer">
+            <p>EmotionBot Controller v1.0 | API Token: ••••••••••• | ESP32 Connected via WiFi</p>
+            <p>© 2023 EmotionBot Project | Data provided by WAQI API</p>
+        </div>
+    </div>
+
+    <script>
+        // API Configuration
+        const API_TOKEN = 'f1efc85263927a6cd3b4e1ad6a97cb195191b163';
+        const API_BASE_URL = 'https://api.waqi.info/feed';
+        
+        // Sample expressions data (in real app, this would come from ESP32)
+        let expressions = [
+            { id: 1, name: "Happy", code: "// Happy face code\n// Eyes: open circles\n// Mouth: upward curve", sound: "happy_tone" },
+            { id: 2, name: "Sad", code: "// Sad face code\n// Eyes: downturned\n// Mouth: downward curve", sound: "sad_tone" },
+            { id: 3, name: "Surprised", code: "// Surprised face\n// Eyes: large circles\n// Mouth: small 'o'", sound: "surprise_beep" },
+            { id: 4, name: "Angry", code: "// Angry face\n// Eyes: slanted\n// Mouth: straight line", sound: "alert_tone" }
+        ];
+        
+        // DOM Elements
+        const cityInput = document.getElementById('cityInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const cityButtons = document.querySelectorAll('.city-btn');
+        const aqiDisplay = document.getElementById('aqiDisplay');
+        const cityNameEl = document.getElementById('cityName');
+        const aqiValueEl = document.getElementById('aqiValue');
+        const aqiLevelEl = document.getElementById('aqiLevel');
+        const updateTimeEl = document.getElementById('updateTime');
+        const pollutantEl = document.getElementById('pollutant');
+        const humidityEl = document.getElementById('humidity');
+        const expressionsList = document.getElementById('expressionsList');
+        const addExpressionBtn = document.getElementById('addExpressionBtn');
+        const esp32Status = document.getElementById('esp32Status');
+        const esp32StatusText = document.getElementById('esp32StatusText');
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            renderExpressions();
+            simulateESP32Connection();
+            
+            // Set default city
+            fetchAQIData('Delhi');
+        });
+        
+        // Fetch AQI Data
+        async function fetchAQIData(city) {
+            try {
+                showLoadingAQI();
+                
+                const response = await fetch(`${API_BASE_URL}/${encodeURIComponent(city)}/?token=${API_TOKEN}`);
+                const data = await response.json();
+                
+                if (data.status === 'ok' && data.data) {
+                    displayAQIData(city, data.data);
+                } else {
+                    throw new Error(data.data || 'City not found');
+                }
+            } catch (error) {
+                console.error('Error fetching AQI:', error);
+                showErrorAQI(city, error.message);
+            }
+        }
+        
+        // Display AQI Data
+        function displayAQIData(city, data) {
+            const aqi = data.aqi;
+            const cityFullName = data.city?.name || city;
+            const time = data.time?.iso ? new Date(data.time.iso).toLocaleTimeString() : 'Just now';
+            const mainPollutant = data.dominentpol || 'PM2.5';
+            const humidity = data.iaqi?.h?.v || '--';
+            
+            // Update UI
+            cityNameEl.textContent = cityFullName;
+            aqiValueEl.textContent = aqi !== '-' ? aqi : '--';
+            updateTimeEl.textContent = time;
+            pollutantEl.textContent = mainPollutant;
+            humidityEl.textContent = humidity !== '--' ? `${humidity}%` : '--';
+            
+            // Set AQI level and color
+            let level = 'Unknown';
+            let levelClass = 'moderate';
+            
+            if (aqi !== '-') {
+                const aqiNum = parseInt(aqi);
+                if (aqiNum <= 50) {
+                    level = 'Good';
+                    levelClass = 'good';
+                } else if (aqiNum <= 100) {
+                    level = 'Moderate';
+                    levelClass = 'moderate';
+                } else if (aqiNum <= 150) {
+                    level = 'Unhealthy for Sensitive';
+                    levelClass = 'unhealthy';
+                } else if (aqiNum <= 200) {
+                    level = 'Unhealthy';
+                    levelClass = 'unhealthy';
+                } else if (aqiNum <= 300) {
+                    level = 'Very Unhealthy';
+                    levelClass = 'unhealthy';
+                } else {
+                    level = 'Hazardous';
+                    levelClass = 'unhealthy';
+                }
+            }
+            
+            aqiLevelEl.textContent = level;
+            aqiLevelEl.className = `aqi-level ${levelClass}`;
+            
+            // Show the display
+            aqiDisplay.classList.add('active');
+        }
+        
+        // Show loading state for AQI
+        function showLoadingAQI() {
+            cityNameEl.textContent = 'Loading...';
+            aqiValueEl.textContent = '--';
+            aqiLevelEl.textContent = 'Loading...';
+            aqiLevelEl.className = 'aqi-level moderate';
+            updateTimeEl.textContent = '--';
+            pollutantEl.textContent = '--';
+            humidityEl.textContent = '--';
+            aqiDisplay.classList.add('active');
+        }
+        
+        // Show error state for AQI
+        function showErrorAQI(city, error) {
+            cityNameEl.textContent = city;
+            aqiValueEl.textContent = '--';
+            aqiLevelEl.textContent = `Error: ${error}`;
+            aqiLevelEl.className = 'aqi-level moderate';
+            updateTimeEl.textContent = '--';
+            pollutantEl.textContent = '--';
+            humidityEl.textContent = '--';
+            aqiDisplay.classList.add('active');
+        }
+        
+        // Render expressions list
+        function renderExpressions() {
+            expressionsList.innerHTML = '';
+            
+            expressions.forEach(exp => {
+                const expElement = document.createElement('div');
+                expElement.className = 'expression-item';
+                expElement.innerHTML = `
+                    <div class="expression-info">
+                        <h4>${exp.name}</h4>
+                        <p>${exp.sound ? `Sound: ${exp.sound}` : 'No sound'}</p>
+                    </div>
+                    <div class="expression-actions">
+                        <button class="btn-icon edit" onclick="editExpression(${exp.id})">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn-icon delete" onclick="deleteExpression(${exp.id})">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+                expressionsList.appendChild(expElement);
+            });
+        }
+        
+        // Add new expression
+        function addExpression() {
+            const name = document.getElementById('expName').value.trim();
+            const code = document.getElementById('expCode').value.trim();
+            const sound = document.getElementById('soundEffect').value.trim();
+            
+            if (!name || !code) {
+                alert('Please enter both a name and code for the expression.');
+                return;
+            }
+            
+            const newExp = {
+                id: expressions.length + 1,
+                name: name,
+                code: code,
+                sound: sound || null
+            };
+            
+            expressions.push(newExp);
+            renderExpressions();
+            
+            // Clear form
+            document.getElementById('expName').value = '';
+            document.getElementById('expCode').value = '';
+            document.getElementById('soundEffect').value = '';
+            
+            // In a real app, send to ESP32 here
+            console.log('Would send to ESP32:', newExp);
+            alert(`Expression "${name}" added! (Simulated - would send to ESP32)`);
+        }
+        
+        // Edit expression
+        function editExpression(id) {
+            const exp = expressions.find(e => e.id === id);
+            if (exp) {
+                document.getElementById('expName').value = exp.name;
+                document.getElementById('expCode').value = exp.code;
+                document.getElementById('soundEffect').value = exp.sound || '';
+                
+                // Scroll to form
+                document.getElementById('expName').focus();
+                
+                alert(`Editing "${exp.name}". Modify and click "Add" to update.`);
+            }
+        }
+        
+        // Delete expression
+        function deleteExpression(id) {
+            if (confirm('Delete this expression?')) {
+                expressions = expressions.filter(e => e.id !== id);
+                renderExpressions();
+                
+                // In a real app, send delete command to ESP32
+                console.log('Would delete from ESP32:', id);
+                alert('Expression deleted! (Simulated - would send to ESP32)');
+            }
+        }
+        
+        // Simulate ESP32 connection status
+        function simulateESP32Connection() {
+            // Randomly show connected/disconnected for demo
+            const isConnected = Math.random() > 0.3;
+            
+            if (isConnected) {
+                esp32Status.className = 'status-indicator connected';
+                esp32StatusText.textContent = 'ESP32: Connected';
+            } else {
+                esp32Status.className = 'status-indicator';
+                esp32StatusText.textContent = 'ESP32: Disconnected';
+            }
+            
+            // Update every 10 seconds
+            setTimeout(simulateESP32Connection, 10000);
+        }
+        
+        // Event Listeners
+        searchBtn.addEventListener('click', () => {
+            const city = cityInput.value.trim();
+            if (city) {
+                fetchAQIData(city);
+            } else {
+                alert('Please enter a city name');
+            }
+        });
+        
+        cityInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchBtn.click();
+            }
+        });
+        
+        cityButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const city = btn.getAttribute('data-city');
+                cityInput.value = city;
+                fetchAQIData(city);
+            });
+        });
+        
+        addExpressionBtn.addEventListener('click', addExpression);
+        
+        // Simulate receiving data from ESP32 (for demo)
+        function simulateESP32Data() {
+            setInterval(() => {
+                // Simulate receiving expression count from ESP32
+                const expressionCount = expressions.length;
+                console.log(`Simulated ESP32 has ${expressionCount} expressions`);
+            }, 15000);
+        }
+        
+        // Start simulation
+        simulateESP32Data();
+        
+        // Make functions available globally
+        window.editExpression = editExpression;
+        window.deleteExpression = deleteExpression;
+    </script>
+</body>
+</html>
