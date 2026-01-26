@@ -32,7 +32,7 @@ Also since I live in city with AQI level more than 130, I am always concerned ab
 
 
 ## Schematic:
-<img width="835" height="709" alt="{5A22C7D0-814F-44A7-8909-7BF26803E992}" src="https://github.com/user-attachments/assets/f687ba05-ae1d-42e5-a3e7-af126f39d115" />
+<img width="834" height="707" alt="{B289544C-C3AA-4791-81CF-BF32BAAD35E2}" src="https://github.com/user-attachments/assets/3e6bd14c-47bf-4f72-80a9-6209df2b2ebd" />
 
 ## PCB:
 
