@@ -8,6 +8,7 @@
  
 </div>
 ### What is it?
+
 SappY is a desk robot which uses Esp32 and oled to show animations. And reacts using multiple sensors. It also has sounds that makes it more lively.
 
 ### Features: 
