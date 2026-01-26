@@ -1,12 +1,15 @@
 
 
 
-<img width="3780" height="1890" alt="sappY" src="https://github.com/user-attachments/assets/36794752-4bd7-4c01-8163-e2ad1c8bd00d" />
 
 <div align = "center">
- <h1> SappY </h1>h1
+ <h1> SappY </h1>
+ <img width="3780" height="1890" alt="sappY" src="https://github.com/user-attachments/assets/36794752-4bd7-4c01-8163-e2ad1c8bd00d" />
+
  
 </div>
+
+
 ### What is it?
 
 SappY is a desk robot which uses Esp32 and oled to show animations. And reacts using multiple sensors. It also has sounds that makes it more lively.
