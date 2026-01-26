@@ -42,6 +42,9 @@ Also since I live in city with AQI level more than 130, I am always concerned ab
 
 
 
+# Bom
+
+<img width="1919" height="870" alt="{99DD8B30-EA63-4ADF-910A-D8F5C2E419FF}" src="https://github.com/user-attachments/assets/c6f925c2-0f30-4e3e-bcf9-f9053021ec80" />
 
 
 </div>
