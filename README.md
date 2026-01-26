@@ -40,6 +40,26 @@ Also since I live in city with AQI level more than 130, I am always concerned ab
 
 <img width="1266" height="718" alt="{1A8B3450-A7B9-47D3-8503-5E0AE0A452B6}" src="https://github.com/user-attachments/assets/9efc4393-34f8-4d97-82ee-fb731c52ed3a" />
 
+## Cad 
+
+### Components:
+
+<img width="1546" height="809" alt="{716C02FA-BC88-47AB-9681-6F992920E0AC}" src="https://github.com/user-attachments/assets/e7116768-ab0e-4a92-aa8d-860bd91373a4" />
+
+
+### Bottom: 
+
+<img width="1538" height="787" alt="{1BD2B336-AB10-444F-899E-7B1D4743CCFB}" src="https://github.com/user-attachments/assets/1de8b901-8256-4240-9921-7c2b0ab55e25" />
+
+### Top:
+
+<img width="1442" height="828" alt="{D3C11C85-9C5B-482B-B236-84D17BC4994D}" src="https://github.com/user-attachments/assets/8f89d897-7b99-4035-a23b-3b10fee04825" />
+
+### Assembly:
+<img width="1346" height="793" alt="{6FFF0953-8126-429E-9E3E-CD39CB8BD592}" src="https://github.com/user-attachments/assets/6cae8e95-8323-44d8-9e68-d00ed75966e8" />
+
+
+
 
 ### links:
 1. https://www.digikey.in/en/products/detail/espressif-systems/ESP32-S3-DEVKITC-1-N8R8/15295894?gclsrc=aw.ds&gad_source=1&gad_campaignid=23291913534&gbraid=0AAAAADrbLlj2MbTWqjcPRwcsMOZKvIy95&gclid=Cj0KCQiAvtzLBhCPARIsALwhxdpJrjQKiFk-O_-rFIuPle6xD8GMGrvYUBQbyBa9Iw4IUABeMZXCf2kaAqefEALw_wcB
