@@ -36,6 +36,8 @@ Also since I live in city with AQI level more than 130, I am always concerned ab
 
 ## PCB:
 
+<img width="359" height="672" alt="{30170945-8224-4E72-8F75-48E06082DE6B}" src="https://github.com/user-attachments/assets/9aab7be8-710a-4baa-af33-e7ae88c7c5c1" />
+
 <img width="1328" height="715" alt="{0C2EDFE7-687F-460A-9D65-588A802B4380}" src="https://github.com/user-attachments/assets/920071c8-9f03-4701-ad3d-cef820602c32" />
 
 
