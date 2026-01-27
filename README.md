@@ -12,7 +12,7 @@
 
 ## What is it?
 
-SappY is a desk robot which uses Esp32 and oled to show animations(i.e. Facial expression). And reacts using multiple sensors. It also has sounds that makes it more lively.
+SappY is a desk robot which uses Esp32 and oled to show animations(i.e. Facial expression). And reacts using multiple sensors. It also has sounds that makes it more lively. It also shows  air quality of the room and in upcoming features its gonna fetch aqi information from web. 
 
 ## Features: 
 
