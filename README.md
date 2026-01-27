@@ -3,7 +3,7 @@
 
 
 <div align = "center">
- <h1> SappY </h1>
+ <img width="500" height="500" alt="Cyberjunkies" src="https://github.com/user-attachments/assets/fd56f8b0-b36c-4b7a-9147-75c0cf9365d7" />
  <img width="3780" height="1890" alt="sappY" src="https://github.com/user-attachments/assets/36794752-4bd7-4c01-8163-e2ad1c8bd00d" />
 
  
