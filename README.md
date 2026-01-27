@@ -59,6 +59,23 @@ Also since I live in city with AQI level more than 130, I am always concerned ab
 <img width="1346" height="793" alt="{6FFF0953-8126-429E-9E3E-CD39CB8BD592}" src="https://github.com/user-attachments/assets/6cae8e95-8323-44d8-9e68-d00ed75966e8" />
 
 
+# BOM:
+Item,Part Name,Supplier,Qty,Unit Price (INR),Unit Price (USD),Link
+1,Adafruit OLED 128x128,DigiKey,1,1991,21.71,https://www.digikey.in/en/products/detail/adafruit-industries-llc/4741/13426655
+2,Slide Switch,DigiKey,1,39.83,0.43,https://www.digikey.in/en/products/detail/same-sky-formerly-cui-devices/SLW-883935-2A-D/21259966
+3,ESP32-S3 DevKitC-1-N8R8,DigiKey,1,1327,14.47,https://www.digikey.in/en/products/detail/espressif-systems/ESP32-S3-DEVKITC-1-N8R8/15295894
+4,Speaker 4227,DigiKey,1,172.61,1.88,https://www.digikey.in/en/products/detail/adafruit-industries-llc/4227/10245140
+5,MPU6050,Robocraze,1,170,1.85,https://robocraze.com/products/mpu-6050-triple-axis-accelerometer-gyroscope-module?variant=40192322011289
+6,BME680,Robocraze,1,707,7.71,https://robocraze.com/products/bme680-temperature-sensor-module?variant=40193794211993
+7,Adafruit PowerBoost 1000C,Robu,1,2916,31.79,https://robu.in/product/adafruit-powerboost-1000-charger-rechargeable-5v-lipo-boost-1a-1000c/
+8,LiPo Battery 1000mAh,Robu,1,377,4.11,https://robu.in/product/wly803040-1000mah-3-7v-single-cell-rechargeable-lipo-battery/
+9,MAX98357 Audio Amp,Robokits,1,105,1.14,https://robokits.co.in/sensors/sound/max98357-i2s-3w-class-d-amplifier-interface-audio-decoder-module-filterless-board-for-raspberry-pi-esp32?products_id=4261:13384ffc9d8bdb21c53c6f72d46f7866
+10,PCB,Custom,1,642.6,7,N/A
+11,Shipping DigiKey,DigiKey,1,1200,13.08,N/A
+12,Shipping Robokits,Robokits,1,80,0.87,N/A
+13,Shipping PCB,Custom,1,734.4,8,N/A
+
+TOTAL,,,,10391.44,113.74,
 
 
 # Checkouts
