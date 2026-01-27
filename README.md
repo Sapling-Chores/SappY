@@ -78,7 +78,7 @@ Also since I live in city with AQI level more than 130, I am always concerned ab
 | 14   | 3D Printing Top           | Custom   | 1   | 244             | 2.66            | N/A |
 | 15   | 3D Printing Bottom        | Custom   | 1   | 507             | 5.53            | N/A |
 | 16   | 3D Printing Shipping      | Custom   | 1   | 49              | 0.54            | N/A |
-| TOTAL |                           |          |     | 11191.44        | 122.47          |      |
+| TOTAL |                           |          |     | 11352      | 122.47          |      |
 
 
 # Checkouts
