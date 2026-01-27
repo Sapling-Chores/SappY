@@ -93,18 +93,5 @@ Also since I live in city with AQI level more than 130, I am always concerned ab
 
 
 
-
-Total:
-
-
-
-
-
-
-
-
-
-
-
 </div>
 
