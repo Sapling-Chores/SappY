@@ -75,7 +75,7 @@ Also since I live in city with AQI level more than 130, I am always concerned ab
 
 # Bom
 
-<img width="1899" height="868" alt="{193A02FB-6133-459C-9D5D-0AF20C038FB2}" src="https://github.com/user-attachments/assets/f9ea2e95-3a08-4588-b4df-ad5b112ff4b8" />
+<img width="1840" height="771" alt="image" src="https://github.com/user-attachments/assets/fdacab2a-33bf-4ee8-96ec-39cdc04b95c8" />
 <img width="1143" height="356" alt="{01FDA0E7-B2C7-4908-BD14-F368719536B3}" src="https://github.com/user-attachments/assets/991793f9-8903-47dc-972a-e95344a2861c" />
 <img width="1279" height="186" alt="{80CB5649-66B4-44EE-A96F-3E8529F8921D}" src="https://github.com/user-attachments/assets/e4e76415-9294-4752-aefc-e02df7a907c4" />
 <img width="1451" height="730" alt="{97EEB0D9-B3DE-442A-A1F8-8EE2DBFE58BD}" src="https://github.com/user-attachments/assets/e0491f7a-2283-4617-817a-120fecb192f3" />
