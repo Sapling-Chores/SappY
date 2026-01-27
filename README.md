@@ -91,7 +91,9 @@ Also since I live in city with AQI level more than 130, I am always concerned ab
 <img width="1858" height="835" alt="{3E645D69-860D-4EBB-9314-0817406C4AAD}" src="https://github.com/user-attachments/assets/4e89a04f-bf5f-4079-9d56-b582223cd2d7" />
 
 
-
+### THIs project uses :
+[EasyEda](https://easyeda.com/) for pcb and schematics
+[Fusion 360](https://www.autodesk.com/in/products/fusion-360/overview) for 3d Design and Render
 
 </div>
 
