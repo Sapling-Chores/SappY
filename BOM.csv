@@ -1,10 +1,12 @@
 Item,Part Name,Description,Quantity,Unit Price (USD),Unit Price (INR),Total (USD),Total (INR),Link
-1,ESP32-S3 DevKitC-1-N8R8,Espressif ESP32-S3 Dev Board,1,23.49,,23.49,,https://www.digikey.in/en/products/detail/espressif-systems/ESP32-S3-DEVKITC-1-N8R8/15295894
-2,MAX98357,3W I2S Class-D Amplifier,1,,89,,89,https://robokits.co.in/sensors/sound/max98357-i2s-3w-class-d-amplifier-interface-audio-decoder-module-filterless-board-for-raspberry-pi-esp32
-3,PowerBoost 1000,5V Boost + LiPo Charger,1,,2916,,2916,https://robu.in/product/adafruit-powerboost-1000-charger-rechargeable-5v-lipo-usb-boost-1a-1000c/
-4,MPU6050,6-Axis Gyro + Accelerometer,1,,292,,292,https://www.amazon.in/Robocraze-MPU-6050-Gyroscope-Accelerometer-Arduino/dp/B07H3XH1TB
-5,BME680,Temp/Humidity/Pressure/Gas Sensor,1,,863,,863,https://robu.in/product/bme680-digital-temperature-humidity-pressure-sensor-cjmcu-680-high-altitude-sensor-module-development-board/
-6,Slide Switch,Same Sky SLW-883935-2A-D,1,0.45,,0.45,,https://www.digikey.in/en/products/detail/same-sky-formerly-cui-devices-/SLW-883935-2A-D/21259966
-7,LiPo Battery,3.7V 1000mAh WLY803040,1,,377,,377,https://robu.in/product/wly803040-1000mah-3-7v-single-cell-rechargeable-lipo-battery/
-8,OLED Display 128x64,Adafruit 128x64 Monochrome OLED (4741),1,22.50,,22.50,,https://www.digikey.in/en/products/detail/adafruit-industries-llc/4741/13426655
-9,Speaker 4Ω,Adafruit 4227 Mini Speaker,1,1.95,,1.95,,https://www.digikey.in/en/products/detail/adafruit-industries-llc/4227/10245140
+1,ESP32-S3 DevKitC-1-N8R8,Espressif ESP32-S3 Dev Board,1,23.49,1948.67,23.49,1948.67,https://www.digikey.in/en/products/detail/espressif-systems/ESP32-S3-DEVKITC-1-N8R8/15295894
+2,MAX98357,3W I2S Class-D Amplifier,1,1.07,89,1.07,89,https://robokits.co.in/sensors/sound/max98357-i2s-3w-class-d-amplifier-interface-audio-decoder-module-filterless-board-for-raspberry-pi-esp32
+3,PowerBoost 1000,5V Boost + LiPo Charger,1,35.13,2916,35.13,2916,https://robu.in/product/adafruit-powerboost-1000-charger-rechargeable-5v-lipo-usb-boost-1a-1000c/
+4,MPU6050,6-Axis Gyro + Accelerometer,1,3.52,292,3.52,292,https://www.amazon.in/Robocraze-MPU-6050-Gyroscope-Accelerometer-Arduino/dp/B07H3XH1TB
+5,BME680,Temp/Humidity/Pressure/Gas Sensor,1,10.39,863,10.39,863,https://robu.in/product/bme680-digital-temperature-humidity-pressure-sensor-cjmcu-680-high-altitude-sensor-module-development-board/
+6,Slide Switch,Same Sky SLW-883935-2A-D,1,0.45,37.35,0.45,37.35,https://www.digikey.in/en/products/detail/same-sky-formerly-cui-devices-/SLW-883935-2A-D/21259966
+7,LiPo Battery,3.7V 1000mAh WLY803040,1,4.54,377,4.54,377,https://robu.in/product/wly803040-1000mah-3-7v-single-cell-rechargeable-lipo-battery/
+8,OLED Display 128x64,Adafruit 128x64 Monochrome OLED (4741),1,22.50,1867.50,22.50,1867.50,https://www.digikey.in/en/products/detail/adafruit-industries-llc/4741/13426655
+9,Speaker 4Ω,Adafruit 4227 Mini Speaker,1,1.95,161.85,1.95,161.85,https://www.digikey.in/en/products/detail/adafruit-industries-llc/4227/10245140
+,,,,,,,
+,,GRAND TOTAL,,92.04,8772.37,92.04,8772.37,
