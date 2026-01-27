@@ -97,5 +97,8 @@ Also since I live in city with AQI level more than 130, I am always concerned ab
 #### [Fusion 360](https://www.autodesk.com/in/products/fusion-360/overview) for 3d Design and Render
 #### [HackClubBlueprint](https://blueprint.hackclub.com)
 
+## Inspiration: 
+[summer.exe](https://www.instagram.com/summerr.exe/)
+
 </div>
 
