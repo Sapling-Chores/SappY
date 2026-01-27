@@ -8,7 +8,8 @@ Item,Part Name,Description,Quantity,Unit Price (USD),Unit Price (INR),Link
 7,LiPo Battery,3.7V 1000mAh WLY803040,1,4.11,377.00,https://robu.in/product/wly803040-1000mah-3-7v-single-cell-rechargeable-lipo-battery/
 8,OLED Display 128x64,Adafruit 128x64 Monochrome OLED (4741),1,22.50,1867.50,https://www.digikey.in/en/products/detail/adafruit-industries-llc/4741/13426655
 9,Speaker 4Ω,Adafruit 4227 Mini Speaker,1,1.95,178.71,https://www.digikey.in/en/products/detail/adafruit-industries-llc/4227/10245140
-, TOTAL,, ,92.04,8772.37,
+, TOTAL,, ,89.41,8772.37,
 , SHIPPING, , ,8.61, 789.066, 
+, GrandTotal, , , 98.02, 
 
 
