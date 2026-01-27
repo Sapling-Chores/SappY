@@ -66,6 +66,7 @@ Also since I live in city with AQI level more than 130, I am always concerned ab
 <img width="1840" height="771" alt="image" src="https://github.com/user-attachments/assets/fdacab2a-33bf-4ee8-96ec-39cdc04b95c8" />
 <img width="1872" height="821" alt="image" src="https://github.com/user-attachments/assets/b926004e-2f13-4b1b-8ab5-ef28c4862f31" />
 <img width="1859" height="859" alt="{4E059632-A869-4819-9D67-191C68E75BA4}" src="https://github.com/user-attachments/assets/6aa242d1-a3b3-4333-bf10-889fdb48dce1" />
+<img width="1902" height="831" alt="{40D43D63-69AE-42D0-8E3B-638EB4089094}" src="https://github.com/user-attachments/assets/98ac64df-8587-40aa-a57b-473abc3d4a5e" />
 
 
 
