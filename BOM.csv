@@ -5,10 +5,12 @@ Item,Part Name,Supplier,Qty,Unit Price (INR),Unit Price (USD),Link
 4,Speaker 4227,DigiKey,1,172.61,1.88,https://www.digikey.in/en/products/detail/adafruit-industries-llc/4227/10245140
 5,MPU6050,Robocraze,1,170,1.85,https://robocraze.com/products/mpu-6050-triple-axis-accelerometer-gyroscope-module?variant=40192322011289
 6,BME680,Robocraze,1,707,7.71,https://robocraze.com/products/bme680-temperature-sensor-module?variant=40193794211993
-7,Adafruit PowerBoost 1000C,Robu,1,2916,31.79,https://robu.in/product/adafruit-powerboost-1000-charger-rechargeable-5v-lipo-usb-boost-1a-1000c/
+7,Adafruit PowerBoost 1000C,Robu,1,2916,31.79,https://robu.in/product/adafruit-powerboost-1000-charger-rechargeable-5v-lipo-boost-1a-1000c/
 8,LiPo Battery 1000mAh,Robu,1,377,4.11,https://robu.in/product/wly803040-1000mah-3-7v-single-cell-rechargeable-lipo-battery/
 9,MAX98357 Audio Amp,Robokits,1,105,1.14,https://robokits.co.in/sensors/sound/max98357-i2s-3w-class-d-amplifier-interface-audio-decoder-module-filterless-board-for-raspberry-pi-esp32?products_id=4261:13384ffc9d8bdb21c53c6f72d46f7866
-10,Shipping DigiKey,DigiKey,1,1200,13.08,N/A
-11,Shipping Robokits,Robokits,1,80,0.87,N/A
+10,PCB,Custom,1,642.6,7, N/A
+11,Shipping DigiKey,DigiKey,1,1200,13.08,N/A
+12,Shipping Robokits,Robokits,1,80,0.87,N/A
+13,Shipping PCB,Custom,1,734.4,8,N/A
 
-TOTAL,,,,9085.44,99.05,
+TOTAL,,,,10391.44,113.74,
