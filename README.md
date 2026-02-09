@@ -71,13 +71,13 @@ Also since I live in city with AQI level more than 130, I am always concerned ab
 | 7    | Adafruit PowerBoost 1000C | Robu     | 1   | 2916            | 31.79           | [Link](https://robu.in/product/adafruit-powerboost-1000-charger-rechargeable-5v-lipo-boost-1a-1000c/) |
 | 8    | LiPo Battery 1000mAh      | Robu     | 1   | 377             | 4.11            | [Link](https://robu.in/product/wly803040-1000mah-3-7v-single-cell-rechargeable-lipo-battery/) |
 | 9    | MAX98357 Audio Amp        | Robokits | 1   | 105             | 1.14            | [Link](https://robokits.co.in/sensors/sound/max98357-i2s-3w-class-d-amplifier-interface-audio-decoder-module-filterless-board-for-raspberry-pi-esp32?products_id=4261:13384ffc9d8bdb21c53c6f72d46f7866) |
-| 10   | PCB                       | Custom   | 1   | 642.6           | 7               | N/A |
-| 11   | Shipping DigiKey          | DigiKey  | 1   | 1200            | 13.08           | N/A |
-| 12   | Shipping Robokits         | Robokits | 1   | 80              | 0.87            | N/A |
-| 13   | Shipping PCB              | Custom   | 1   | 734.4           | 8               | N/A |
-| 14   | 3D Printing Top           | Custom   | 1   | 244             | 2.66            | N/A |
-| 15   | 3D Printing Bottom        | Custom   | 1   | 507             | 5.53            | N/A |
-| 16   | 3D Printing Shipping      | Custom   | 1   | 49              | 0.54            | N/A |
+| 10   | PCB                       | Custom   | 1   | 642.6           | 7               | --|
+| 11   | Shipping DigiKey          | DigiKey  | 1   | 1200            | 13.08           | -- |
+| 12   | Shipping Robokits         | Robokits | 1   | 80              | 0.87            | -- |
+| 13   | Shipping PCB              | Custom   | 1   | 734.4           | 8               | -- |
+| 14   | 3D Printing Top           | Custom   | 1   | 244             | 2.66            | -- |
+| 15   | 3D Printing Bottom        | Custom   | 1   | 507             | 5.53            | -- |
+| 16   | 3D Printing Shipping      | Custom   | 1   | 49              | 0.54            | -- |
 | TOTAL |                           |          |     | 11352      | 122.47          |      |
 
 
