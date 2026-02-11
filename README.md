@@ -1,4 +1,4 @@
-#Note:  I wish to remake/design this project. 
+# Note:  I wish to remake/design this project. 
  # because I want to redesign the body and the size . Sorry if I got y'all any trouble!!
 
 
